@@ -14,7 +14,14 @@ const routes = [
   },
   {
     path: '/home',
-    component: () => import('../components/Home.vue')
+    component: () => import('../components/Home.vue'),
+    redirect: '/welcome',
+    children: [
+      { path: '/Welcome', component: () => import('../components/Welcome.vue') },
+      { path: '/users', component: () => import('../components/users/users.vue') },
+      { path: '/rights', component: () => import('../components/power/Rights.vue') }
+
+    ]
   }
 ]
 
